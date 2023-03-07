@@ -1,0 +1,70 @@
+h1 {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  size: 3rem;
+}
+
+#title {
+  background-color: #0b0909;
+}
+#title img {
+  /* position: relative;
+  left: 70px; */
+  margin: auto;
+}
+
+/* .navbar .bg-transparent .navbar-expand-lg {
+  color: #8c8c8c;
+} */
+
+.navbar-nav .nav-item .nav-link {
+  color: #8c8c8c;
+}
+
+.row {
+  color: #d6d6d6;
+  margin: 0px;
+  align-items: center;
+}
+.col-md-6 {
+  margin: 0px;
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+}
+
+/* .typewritter {
+  font-family: monospace;
+  display: inline-block;
+} */
+
+.typetext {
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 3px;
+  animation: typing 5s steps(34, end), blink 0.75s step-end infinite;
+  white-space: nowrap;
+  font-size: 40px;
+  font-weight: 700;
+  border-right: 4px solid orange;
+  box-sizing: border-box;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #44444c;
+  }
+}
