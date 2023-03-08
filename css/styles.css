@@ -69,3 +69,240 @@ h1 {
     border-color: #44444c;
   }
 }
+
+/* .page__lines {
+  position: absolute;
+  inset: 0;
+  mask-image: linear-gradient(0deg, transparent, #222, #222);
+  -webkit-mask-image: linear-gradient(0deg, transparent, #222, #222);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='30' height='30' fill='none' stroke='rgb(15 23 42 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-position: bottom 1px center;
+  background-color: hsla(0, 0%, 100%, .25)
+} */
+
+.skills,
+body.dark .experience-personal__cards .personal-lists h3 a:after {
+    background: #fff
+}
+
+.skills {
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 9rem 15rem 4rem
+}
+
+@media screen and (max-width:1340px) {
+    .skills {
+        padding: 9rem 6rem 4rem
+    }
+}
+
+@media screen and (max-width:640px) {
+    .skills {
+        padding: 9rem 1rem 4rem
+    }
+}
+
+.skills-section {
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 2rem
+}
+
+.skills-section__title {
+    border-bottom: 1.25px solid #222;
+    margin-bottom: 1.5rem
+}
+
+.skills-section__title h2 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .15rem;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1.5px #222
+}
+
+@media only screen and (max-width:640px) {
+    .skills-section__title h2 {
+        font-size: 1.5rem
+    }
+}
+
+.skills-section__cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem
+}
+
+@media screen and (max-width:640px) {
+    .skills-section__cards {
+        justify-content: space-around;
+        align-items: center;
+        gap: 1.5rem
+    }
+
+    .skills-section__cards .card-icon img {
+        width: 30px
+    }
+}
+
+.skills-section__cards .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    --bs-card-border-color:none;
+}
+
+.skills-section__cards .card-icon {
+    padding: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease
+}
+
+.skills-section__cards .card-icon img {
+    border-radius: .25rem;
+    width: 40px
+}
+
+.skills-section__cards .card-icon:hover {
+    transform: scale(.9);
+    border-color: transparent !important
+}
+
+.skills-section__cards .card-icon:active {
+    transform: scale(.8);
+    border-color: transparent !important
+}
+
+.skills-section__cards .card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .15rem;
+    color: #222
+}
+
+.skills-certif {
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 2rem
+}
+
+.skills-certif__title {
+    border-bottom: 1.25px solid #222;
+    margin-bottom: 1.5rem
+}
+
+.skills-certif__title h2 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .15rem;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1.5px #222
+}
+
+@media only screen and (max-width:640px) {
+    .skills-certif__title h2 {
+        font-size: 1.5rem
+    }
+}
+
+.skills-certif__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.skills-certif__cards li {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0
+}
+
+.skills-certif__cards li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: #222
+}
+
+.skills-certif__cards li a span {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: inherit
+}
+
+.skills-certif__cards li a svg {
+    width: 15px
+}
+
+.skills-certif__cards li a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #222;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .25s ease-in-out
+}
+
+.skills-certif__cards li a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1)
+}
+
+body.dark .skills {
+    background: #222
+}
+
+body.dark .skills-section__title {
+    border-color: #fff
+}
+
+body.dark .skills-section__title h2 {
+    -webkit-text-stroke: 1.5px #fff
+}
+
+body.dark .skills-section__cards .card h3 {
+    color: #fff
+}
+
+body.dark .skills-certif__title {
+    border-color: #fff
+}
+
+body.dark .skills-certif__title h2 {
+    -webkit-text-stroke: 1.5px #fff
+}
+
+body.dark .skills-certif__cards li a {
+    color: #fff
+}
+
+body.dark .skills-certif__cards li a span {
+    color: inherit
+}
+
+body.dark .skills-certif__cards li a:after {
+    background: #fff
+}
