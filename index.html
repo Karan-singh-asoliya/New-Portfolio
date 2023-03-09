@@ -12,10 +12,56 @@
 
   <link rel="stylesheet" href="Bootstrap 5.2.3/bootstrap-5.2.3-dist/css/bootstrap.min.css">
   <script src="Bootstrap 5.2.3/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+  <style>
+    body{
+      background-color: #0b0909;
+      transition: background-color 1s ease;
+    }
+    .title, .skills, .projects, .achievements, .glimpses{
+      min-height: 100vh;
+    }
+    .color-c1{
+      background: #0b0909;
+    }
+    .color-c2{
+      background: #44444c;
+    }
+    .color-c3{
+      background: #8c8c8c;
+    }
+    .color-c4{
+      background: #ffffff;
+    }
+  </style>
+
+  <script>
+    $(window).scroll(function(){
+      var $window = $(window),
+          $body = $('body'),
+          $sections = $('section');
+
+      var scroll = $window.scrollTop() + ($window.height()/3);
+      $sections.each(function(){
+        var $this = $(this);
+        
+        if($this.position().top <= scroll &&
+        $this.position().top + $this.height() > scroll){
+          $body.removeClass(function(index, css){
+            return (css.match(/(^|\s)color-\S+/g) || []).join('');
+          });
+          
+          $body.addClass('color-'+$(this).data('color'));
+        }
+      });
+    }).scroll();
+  </script>
+
 </head>
 
 <body>
-  <section id="title">
+  <section class="title" data-color="c1">
     <!--     ------------              Nav Bar        ------------------- -->
     <nav class="navbar navbar-dark navbar-expand-md">
       <a class="navbar-brand" href="#">Portfolio</a>
@@ -64,7 +110,7 @@
 
   <!-- skills -->
 
-  <section id="skills" class="skills">
+  <section id="skills" class="skills" data-color="c4">
     <h1 class="overlay-text">SKILLS</h1>
 
     <div class="skills-section" style="opacity:1">
@@ -199,73 +245,258 @@
 
   </section>
 
+  <!-- projects -->
 
-
-  <!-- Testimonials -->
-
-  <section id="projects">
-    <h2>
-      I no longer have to sniff other dogs for love. I've found the hottest
-      Corgi on TinDog. Woof.
-    </h2>
-    <img src="images/dog-img.jpg" alt="dog-profile" />
-    <em>Pebbles, New York</em>
-
-    <!-- <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
-    <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
-    <em>Beverly, Illinois</em> -->
+  <section id="projects" class="projects" data-color="c2">
+    <h1 class="overlay-text-project">PROJECTS</h1>
+    <div class="row" style="margin: 50px 0px;">
+      <div class="col-md-6">
+        <div class="card" style="background-color: #2c2c2c;">
+          <div class="card-body">
+            <div class="project-img"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" style="color:#ffffff">
+        <h5 style="font-weight: 700;">Smart Asset Monitoring System</h5>
+        <br>
+        <ul style="text-align: left;line-height: 30px;">
+          <li>To track, monitor and maintain the physical assets [CSR]. </li>
+          <li>Track live location with accurate longitude, latitude and altitude of the asset. </li>
+          <li>It has a camera unit to provide the pictures and an alert system to alert the authority about the asset. </li>
+          <li>Alerts are sent to the right authority with an email in hierarchical manner providing the details.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" style="margin: 50px 0px;">
+      <div class="col-md-6" style="color:#ffffff">
+        <h5 style="font-weight: 700;">Smart Pet Feeder</h5>
+        <br>
+        <ul style="text-align: left;line-height: 30px;">
+          <li>To provide food, water and nutrients to the pets and stray animals without any human intervention. </li>
+          <li>This machine can be operated using the SMS system or a mobile application uniquely designed for the same. </li>
+          <li>It has functionality to dispense solid, semi-solid or liquid food at the fixed time in prescribed quantity with monitored pressure of dispense. </li>
+          <li>All the data of feeding is stored on cloud and can be tracked by the user itself.</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div class="card" style="background-color: #5b5b5b;">
+          <div class="card-body">
+            <div class="project-img1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Press -->
+  <!-- achievements -->
 
-  <section id="achievements">
-    <img src="images/techcrunch.png" alt="tc-logo" />
-    <img src="images/tnw.png" alt="tnw-logo" />
-    <img src="images/bizinsider.png" alt="biz-insider-logo" />
-    <img src="images/mashable.png" alt="mashable-logo" />
+  <section id="achievements" class="achievements" data-color="c3">
+    <h1 class="overlay-text-ach">Achievements</h1>
+    <div class="col-md-6" style="justify-content: center;">
+      <div class="card">
+        <div class="circle"></div>
+        <div class="content">
+          <h2>Smart India</h2>
+          <h2>Hackathon</h2>
+          <br>
+          <p><h3>Winner</h3></p>
+          <hr>
+          <a href="https://youtu.be/JbyX4mZqIcA">Animated Video</a>
+        </div>
+        <img src="images/sih/sih.webp" alt="" />
+      </div>
+    </div>
+    <div class="col-md-6" style="justify-content: center;">
+      <div class="card">
+        <div class="circle1"></div>
+        <div class="content">
+          <h2>Smart India</h2>
+          <h2>Hackathon</h2>
+          <br>
+          <p><h3>Winner</h3></p>
+          <hr>
+          <a href="https://youtu.be/JbyX4mZqIcA">Animated Video</a>
+        </div>
+        <img src="images/other/hackavishkar.jpg" alt="" />
+      </div>
+    </div>
   </section>
 
-  <!-- Pricing -->
+  <!-- glimpses -->
 
-  <section id="glimpses">
-    <h2>A Plan for Every Dog's Needs</h2>
-    <p>Simple and affordable price plans for your and your dog.</p>
-
-    <h3>Chihuahua</h3>
-    <h2>Free</h2>
-    <p>5 Matches Per Day</p>
-    <p>10 Messages Per Day</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
-
-    <h3>Labrador</h3>
-    <h2>$49 / mo</h2>
-    <p>Unlimited Matches</p>
-    <p>Unlimited Messages</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
-
-    <h3>Mastiff</h3>
-    <h2>$99 / mo</h2>
-    <p>Pirority Listing</p>
-    <p>Unlimited Matches</p>
-    <p>Unlimited Messages</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
+  <section id="glimpses" class="glimpses" data-color="c4">
+    <h1 class="overlay-text-gl">GLIMPSES</h1>
+    <div class="card">
+      <div class="card-body">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active ">
+              <img
+                src="images/sih/IMG-2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item carousel-item-next">
+              <img
+                src="images/sih/IMG-3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sih/IMG-5.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sih/IMG-6.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sih/IMG_20220825_080821.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Smart India Hackathon</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/gdsc/gdsc.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item carousel-item-next">
+              <img
+                src="images/gdsc/IMG_20221105_100831.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221105_111239.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221105_111804.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221105_112058.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221106_003708_0914.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221106_003712_0452.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221111_153251.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Additional information goes here.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/other/IMG-11.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item  carousel-item-next">
+              <img
+                src="images/other/IMG-20210928-WA0002.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/other/IMG-20210928-WA0006.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/other/IMG-20210929-WA0001.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/other/IMG-22.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Additional information goes here.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Call to Action -->
+  <!-- Contact -->
 
-  <section id="contact">
-    <h3>Find the True Love of Your Dog's Life Today.</h3>
+  <section id="contact" class="contact" data-color="c1">
+    <h3>Find the True Love of Your Dog's Life yesterday.</h3>
     <button type="button">Download</button>
     <button type="button">Download</button>
   </section>
 
   <!-- Footer -->
 
-  <footer id="footer">
-    <p>© Copyright TinDog</p>
+  <footer id="footer" style="text-align: center;">
+    <p style="color: #d6d6d6;">&lt; Made with '❤' &gt;</p>
   </footer>
 </body>
 
