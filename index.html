@@ -12,17 +12,64 @@
 
   <link rel="stylesheet" href="Bootstrap 5.2.3/bootstrap-5.2.3-dist/css/bootstrap.min.css">
   <script src="Bootstrap 5.2.3/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+  <style>
+    body{
+      background-color: #0b0909;
+      transition: background-color 1s ease;
+    }
+    .title, .skills, .projects, .achievements, .glimpses{
+      min-height: 100vh;
+    }
+    .color-c1{
+      background: #0b0909;
+    }
+    .color-c2{
+      background: #44444c;
+    }
+    .color-c3{
+      background: #8c8c8c;
+    }
+    .color-c4{
+      background: #ffffff;
+    }
+  </style>
+
+  <script>
+    $(window).scroll(function(){
+      var $window = $(window),
+          $body = $('body'),
+          $sections = $('section');
+
+      var scroll = $window.scrollTop() + ($window.height()/3);
+      $sections.each(function(){
+        var $this = $(this);
+        
+        if($this.position().top <= scroll &&
+        $this.position().top + $this.height() > scroll){
+          $body.removeClass(function(index, css){
+            return (css.match(/(^|\s)color-\S+/g) || []).join('');
+          });
+          
+          $body.addClass('color-'+$(this).data('color'));
+        }
+      });
+    }).scroll();
+  </script>
+
 </head>
 
 <body>
-  <section id="title">
+  <section class="title" data-color="c1">
     <!--     ------------              Nav Bar        ------------------- -->
     <nav class="navbar navbar-dark navbar-expand-md">
-      <a class="navbar-brand" style="color:#8c8c8c; margin-left:16px;" href="#">Portfolio</a>
+      <a class="navbar-brand" href="#">Portfolio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
         aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
         <ul class="navbar-nav">
@@ -45,9 +92,8 @@
       </div>
     </nav>
 
-
     <!-- Title -->
-  
+
     <div class="row" style="margin: 0px;">
       <div class="col-md-6">
         <h1 class="typetext">Karan Singh Asoliya</h1>
@@ -59,14 +105,14 @@
         <div class="img"></div>
         <!-- <img src="images/karan.png" alt="Karan-img" ; /> -->
       </div>
-      <hr style="border: d6d6d6;height: 10px;">
     </div>
   </section>
 
   <!-- skills -->
-  
-  <section id="skills" class="skills">
+
+  <section id="skills" class="skills" data-color="c4">
     <h1 class="overlay-text">SKILLS</h1>
+
     <div class="skills-section" style="opacity:1">
       <div class="skills-section__title" style="overflow:hidden">
         <h2 style="opacity:1;transform:none">WEB</h2>
@@ -77,7 +123,7 @@
             <div class="card-icon" style="background-color:rgba(227, 79, 38, .1);border:1px solid #E34F26"><img
                 alt="HTML" src="https://www.svgrepo.com/show/452228/html-5.svg" width="50" height="50" decoding="async"
                 data-nimg="1" loading="lazy" style="color:transparent" /></div>
-            <h3 style="color:#E34F26">HTML</h3>
+            <h3 style="color:#E34F26;font-weight: bolder;">HTML</h3>
           </div>
         </div>
         <div style="overflow:hidden">
@@ -85,7 +131,7 @@
             <div class="card-icon" style="background-color:rgba(21, 114, 182, .1);border:1px solid #1572B6"><img
                 alt="CSS" src="https://www.svgrepo.com/show/452185/css-3.svg" width="50" height="50" decoding="async"
                 data-nimg="1" loading="lazy" style="color:transparent" /></div>
-            <h3 style="color:#1572B6">CSS</h3>
+            <h3 style="color:#1572B6;font-weight: bolder;">CSS</h3>
           </div>
         </div>
         <div style="overflow:hidden">
@@ -93,134 +139,364 @@
             <div class="card-icon" style="background-color:rgba(247, 223, 30, .1);border:1px solid #F7DF1E"><img
                 alt="JavaScript" src="https://www.svgrepo.com/show/353925/javascript.svg" width="50" height="50"
                 decoding="async" data-nimg="1" loading="lazy" style="color:transparent" /></div>
-            <h3 style="color:#F7DF1E">JavaScript</h3>
+            <h3 style="color:#F7DF1E;font-weight: bolder;">JavaScript</h3>
+          </div>
+        </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(199, 38, 227, 0.1);border:1px solid #ba26e3"><img
+                alt="HTML" src="images/bootstrap-svgrepo-com.svg" width="50" height="50" decoding="async"
+                data-nimg="1" loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#ba26e3;font-weight: bolder;">Bootstrap</h3>
           </div>
         </div>
       </div>
-      <div class="skills-section" style="opacity:1">
-        <div class="skills-section__title" style="overflow:hidden">
-          <h2 style="opacity:1;transform:none">Animation</h2>
+    </div>
+
+    <div class="skills-section" style="opacity:1">
+      <div class="skills-section__title" style="overflow:hidden">
+        <h2 style="opacity:1;transform:none">Programming</h2>
+      </div>
+      <div class="skills-section__cards">
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(2, 86, 155, .1);border:1px solid #02569B"><img
+                alt="Blender" src="images/cpp-svgrepo-com.svg" width="50" height="50" decoding="async" data-nimg="1"
+                loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#02569B;font-weight: bolder;">C++</h3>
+          </div>
         </div>
-        <div class="skills-section__cards">
-          <div style="overflow:hidden">
-            <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
-              <div class="card-icon" style="background-color:rgba(2, 86, 155, .1);border:1px solid #02569B"><img
-                  alt="Blender" src="images/blender-svgrepo-com.svg" width="50" height="50" decoding="async"
-                  data-nimg="1" loading="lazy" style="color:transparent" /></div>
-              <h3 style="color:#02569B">Blender</h3>
-            </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(2, 86, 155, .1);border:1px solid #02569B"><img
+                alt="Blender" src="images/tree-structure-svgrepo-com.svg" width="50" height="50" decoding="async" data-nimg="1"
+                loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#02569B;font-weight: bolder;">DSA</h3>
+          </div>
+        </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(2, 86, 155, .1);border:1px solid #02569B"><img
+                alt="Blender" src="images/object-oriented-programming-svgrepo-com.svg" width="50" height="50" decoding="async" data-nimg="1"
+                loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#02569B;font-weight: bolder;">OOPs</h3>
+          </div>
           </div>
         </div>
       </div>
-      <div class="skills-section" style="opacity:1">
-        <div class="skills-section__title" style="overflow:hidden">
-          <h2 style="opacity:1;transform:none">Other</h2>
+    </div>
+
+    <div class="skills-section" style="opacity:1">
+      <div class="skills-section__title" style="overflow:hidden">
+        <h2 style="opacity:1;transform:none">Other</h2>
+      </div>
+      <div class="skills-section__cards">
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(240, 80, 50, .1);border:1px solid #F05032"><img
+                alt="Git" src="https://www.svgrepo.com/show/452210/git.svg" width="50" height="50" decoding="async"
+                data-nimg="1" loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#F05032;font-weight: bolder;">Git</h3>
+          </div>
         </div>
-        <div class="skills-section__cards">
-          <div style="overflow:hidden">
-            <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
-              <div class="card-icon" style="background-color:rgba(240, 80, 50, .1);border:1px solid #F05032"><img
-                  alt="Git" src="https://www.svgrepo.com/show/452210/git.svg" width="50" height="50" decoding="async"
-                  data-nimg="1" loading="lazy" style="color:transparent" /></div>
-              <h3 style="color:#F05032">Git</h3>
-            </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(60, 58, 58, 0.1);border:1px solid #020202"><img
+                alt="Canva" src="images/canva-svgrepo-com.svg" width="50" height="50" decoding="async" data-nimg="1"
+                loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#000000;font-weight: bolder;">Canva</h3>
           </div>
-          <div style="overflow:hidden">
-            <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
-              <div class="card-icon" style="background-color:rgba(242, 78, 30, .1);border:1px solid #F24E1E"><img
-                  alt="Canva" src="images/canva-svgrepo-com.svg" width="50" height="50" decoding="async" data-nimg="1"
-                  loading="lazy" style="color:transparent" /></div>
-              <h3 style="color:#F24E1E">Canva</h3>
-            </div>
+        </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(255, 202, 40, .1);border:1px solid #FFCA28"><img
+                alt="Firebase" src="https://www.svgrepo.com/show/373595/firebase.svg" width="50" height="50"
+                decoding="async" data-nimg="1" loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#FFCA28;font-weight: bolder;">Firebase</h3>
           </div>
-          <div style="overflow:hidden">
-            <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
-              <div class="card-icon" style="background-color:rgba(255, 202, 40, .1);border:1px solid #FFCA28"><img
-                  alt="Firebase" src="https://www.svgrepo.com/show/373595/firebase.svg" width="50" height="50"
-                  decoding="async" data-nimg="1" loading="lazy" style="color:transparent" /></div>
-              <h3 style="color:#FFCA28">Firebase</h3>
-            </div>
+        </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(0, 122, 204, .1);border:1px solid #007ACC"><img
+                alt="VSCode" src="https://www.svgrepo.com/show/374171/vscode.svg" width="50" height="50"
+                decoding="async" data-nimg="1" loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#007ACC;font-weight: bolder;">VSCode</h3>
           </div>
-          <div style="overflow:hidden">
-            <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
-              <div class="card-icon" style="background-color:rgba(0, 122, 204, .1);border:1px solid #007ACC"><img
-                  alt="VSCode" src="https://www.svgrepo.com/show/374171/vscode.svg" width="50" height="50"
-                  decoding="async" data-nimg="1" loading="lazy" style="color:transparent" /></div>
-              <h3 style="color:#007ACC">VSCode</h3>
-            </div>
+        </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(238, 155, 60, 0.1);border:1px solid #f3a425"><img
+                alt="Blender" src="images/blender-svgrepo-com.svg" width="50" height="50" decoding="async" data-nimg="1"
+                loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#f3a425;font-weight: bolder;">Blender</h3>
+          </div>
+        </div>
+        <div style="overflow:hidden">
+          <div class="card" style="opacity:1;transform:translateY(0%) translateZ(0)">
+            <div class="card-icon" style="background-color:rgba(28, 29, 29, 0.1);border:1px solid #010101"><img
+                alt="Blender" src="images/internet-of-things-svgrepo-com.svg" width="50" height="50" decoding="async" data-nimg="1"
+                loading="lazy" style="color:transparent" /></div>
+            <h3 style="color:#010101;font-weight: bolder;">IoT</h3>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- projects -->
+
+  <section id="projects" class="projects" data-color="c2">
+    <h1 class="overlay-text-project">PROJECTS</h1>
+    <div class="row" style="margin: 50px 0px;">
+      <div class="col-md-6">
+        <div class="card" style="background-color: #2c2c2c;">
+          <div class="card-body">
+            <div class="project-img"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" style="color:#ffffff">
+        <h5 style="font-weight: 700;">Smart Asset Monitoring System</h5>
+        <br>
+        <ul style="text-align: left;line-height: 30px;">
+          <li>To track, monitor and maintain the physical assets [CSR]. </li>
+          <li>Track live location with accurate longitude, latitude and altitude of the asset. </li>
+          <li>It has a camera unit to provide the pictures and an alert system to alert the authority about the asset. </li>
+          <li>Alerts are sent to the right authority with an email in hierarchical manner providing the details.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" style="margin: 50px 0px;">
+      <div class="col-md-6" style="color:#ffffff">
+        <h5 style="font-weight: 700;">Smart Pet Feeder</h5>
+        <br>
+        <ul style="text-align: left;line-height: 30px;">
+          <li>To provide food, water and nutrients to the pets and stray animals without any human intervention. </li>
+          <li>This machine can be operated using the SMS system or a mobile application uniquely designed for the same. </li>
+          <li>It has functionality to dispense solid, semi-solid or liquid food at the fixed time in prescribed quantity with monitored pressure of dispense. </li>
+          <li>All the data of feeding is stored on cloud and can be tracked by the user itself.</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div class="card" style="background-color: #5b5b5b;">
+          <div class="card-body">
+            <div class="project-img1"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- achievements -->
 
-
-  <!-- Testimonials -->
-
-  <section id="projects">
-    <h2>
-      I no longer have to sniff other dogs for love. I've found the hottest
-      Corgi on TinDog. Woof.
-    </h2>
-    <img src="images/dog-img.jpg" alt="dog-profile" />
-    <em>Pebbles, New York</em>
-
-    <!-- <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of their life. I think.</h2>
-    <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
-    <em>Beverly, Illinois</em> -->
+  <section id="achievements" class="achievements" data-color="c3">
+    <h1 class="overlay-text-ach">Achievements</h1>
+    <div class="col-md-6" style="justify-content: center;">
+      <div class="card">
+        <div class="circle"></div>
+        <div class="content">
+          <h2>Smart India</h2>
+          <h2>Hackathon</h2>
+          <br>
+          <p><h3>Winner</h3></p>
+          <hr>
+          <a href="https://youtu.be/JbyX4mZqIcA">Animated Video</a>
+        </div>
+        <img src="images/sih/sih.webp" alt="" />
+      </div>
+    </div>
+    <div class="col-md-6" style="justify-content: center;">
+      <div class="card">
+        <div class="circle1"></div>
+        <div class="content">
+          <h2>Smart India</h2>
+          <h2>Hackathon</h2>
+          <br>
+          <p><h3>Winner</h3></p>
+          <hr>
+          <a href="https://youtu.be/JbyX4mZqIcA">Animated Video</a>
+        </div>
+        <img src="images/other/hackavishkar.jpg" alt="" />
+      </div>
+    </div>
   </section>
 
-  <!-- Press -->
+  <!-- glimpses -->
 
-  <section id="achievements">
-    <img src="images/techcrunch.png" alt="tc-logo" />
-    <img src="images/tnw.png" alt="tnw-logo" />
-    <img src="images/bizinsider.png" alt="biz-insider-logo" />
-    <img src="images/mashable.png" alt="mashable-logo" />
+  <section id="glimpses" class="glimpses" data-color="c4">
+    <h1 class="overlay-text-gl">GLIMPSES</h1>
+    <div class="card">
+      <div class="card-body">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active ">
+              <img
+                src="images/sih/IMG-2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item carousel-item-next">
+              <img
+                src="images/sih/IMG-3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sih/IMG-5.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sih/IMG-6.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/sih/IMG_20220825_080821.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Smart India Hackathon</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/gdsc/gdsc.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item carousel-item-next">
+              <img
+                src="images/gdsc/IMG_20221105_100831.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221105_111239.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221105_111804.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221105_112058.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221106_003708_0914.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221106_003712_0452.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/gdsc/IMG_20221111_153251.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Additional information goes here.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="1000"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/other/IMG-11.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item  carousel-item-next">
+              <img
+                src="images/other/IMG-20210928-WA0002.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/other/IMG-20210928-WA0006.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/other/IMG-20210929-WA0001.jpg"
+                alt=""
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/other/IMG-22.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Additional information goes here.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Pricing -->
+  <!-- Contact -->
 
-  <section id="glimpses">
-    <h2>A Plan for Every Dog's Needs</h2>
-    <p>Simple and affordable price plans for your and your dog.</p>
-
-    <h3>Chihuahua</h3>
-    <h2>Free</h2>
-    <p>5 Matches Per Day</p>
-    <p>10 Messages Per Day</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
-
-    <h3>Labrador</h3>
-    <h2>$49 / mo</h2>
-    <p>Unlimited Matches</p>
-    <p>Unlimited Messages</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
-
-    <h3>Mastiff</h3>
-    <h2>$99 / mo</h2>
-    <p>Pirority Listing</p>
-    <p>Unlimited Matches</p>
-    <p>Unlimited Messages</p>
-    <p>Unlimited App Usage</p>
-    <button type="button">Sign Up</button>
-  </section>
-
-  <!-- Call to Action -->
-
-  <section id="contact">
-    <h3>Find the True Love of Your Dog's Life Today.</h3>
+  <section id="contact" class="contact" data-color="c1">
+    <h3>Find the True Love of Your Dog's Life yesterday.</h3>
     <button type="button">Download</button>
     <button type="button">Download</button>
   </section>
 
   <!-- Footer -->
 
-  <footer id="footer">
-    <p>© Copyright TinDog</p>
+  <footer id="footer" style="text-align: center;">
+    <p style="color: #d6d6d6;">&lt; Made with '❤' &gt;</p>
   </footer>
 </body>
 
