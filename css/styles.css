@@ -36,6 +36,12 @@ h1 {
     background-image: url("../images/karan\ full\ dash.png");
 }
 
+.BgColour {
+    color: black;
+    transition: all 1s;
+    background-color: rgb(0, 0, 0, 0.692);
+    border-bottom: 1px rgb(0, 0, 0, 0.692);
+}
 
 .navbar-brand {
     color: #d6d6d6;
@@ -98,6 +104,17 @@ h1 {
     }
 }
 
+.btn-dark {
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    background-color: #0b0909;
+}
+
+.btn-dark:hover {
+    box-shadow: 0 0 10px 0 #d6d6d6, 0 0 20px 2px #d6d6d6;
+    border: 1px solid #d6d6d6;
+}
+
 /* ------------skills section---------------- */
 
 .skills {
@@ -125,13 +142,14 @@ h1 {
 }
 
 .skills-section__title h2 {
+    opacity:1;
+    transform:none;
     position: relative;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: .15rem;
-    color: transparent;
     text-transform: uppercase;
-    -webkit-text-stroke: 1.5px #d6d6d6
+    -webkit-text-stroke: 2.5px #4c4c4c;
 }
 
 @media only screen and (max-width:640px) {
@@ -222,12 +240,6 @@ h1 {
     -webkit-text-stroke: 1.5px #d6d6d6
 }
 
-@media only screen and (max-width:640px) {
-    .skills-certif__title h2 {
-        font-size: 1.5rem
-    }
-}
-
 .skills-certif__cards {
     display: flex;
     flex-direction: column;
@@ -276,42 +288,6 @@ h1 {
     transform: scaleX(1)
 }
 
-body.dark .skills {
-    background: #d6d6d6
-}
-
-body.dark .skills-section__title {
-    border-color: #d6d6d6
-}
-
-body.dark .skills-section__title h2 {
-    -webkit-text-stroke: 1.5px #d6d6d6
-}
-
-body.dark .skills-section__cards .card h3 {
-    color: #d6d6d6
-}
-
-body.dark .skills-certif__title {
-    border-color: #d6d6d6
-}
-
-body.dark .skills-certif__title h2 {
-    -webkit-text-stroke: 1.5px #d6d6d6
-}
-
-body.dark .skills-certif__cards li a {
-    color: #d6d6d6
-}
-
-body.dark .skills-certif__cards li a span {
-    color: inherit
-}
-
-body.dark .skills-certif__cards li a:after {
-    background: #d6d6d6
-}
-
 .overlay-text {
     position: relative;
     top: 0px;
@@ -332,16 +308,6 @@ body.dark .skills-certif__cards li a:after {
     -webkit-background-clip: text;
 }
 
-.btn-dark {
-    -webkit-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
-    background-color: #0b0909;
-}
-
-.btn-dark:hover {
-    box-shadow: 0 0 10px 0 #d6d6d6, 0 0 20px 2px #d6d6d6;
-    border: 1px solid #d6d6d6;
-}
 
 /* ---------------project section-------------- */
 
@@ -355,7 +321,6 @@ body.dark .skills-certif__cards li a:after {
     gap: 1rem;
     padding: 50px 72px;
 }
-
 
 .overlay-text-project {
     position: relative;
@@ -400,6 +365,29 @@ body.dark .skills-certif__cards li a:after {
     margin: auto;
 }
 
+@media screen and (max-width:770px) {
+    .projects .card {
+        justify-content: space-around;
+        align-items: center;
+        gap: 1.5rem
+    }
+
+    .projects .card .project-img, .projects .card .project-img1 {
+        width: 300px
+    }
+}
+
+@media screen and (max-width:1060px) {
+    .projects .card {
+        justify-content: space-around;
+        align-items: center;
+        gap: 1.5rem
+    }
+
+    .projects .card .project-img, .projects .card .project-img1 {
+        width: 300px
+    }
+}
 
 /* -----------achievement section--------------------- */
 
@@ -429,7 +417,7 @@ body.dark .skills-certif__cards li a:after {
     letter-spacing: .20rem;
     color: transparent;
     text-transform: uppercase;
-    background: linear-gradient(to top, #0b0909 0%, #d6d6d6 100%);
+    background: linear-gradient(to top, #0b0a0a 0%, #ffffff 100%);
     background-clip: text;
     -webkit-background-clip: text;
 }
@@ -446,7 +434,8 @@ body.dark .skills-certif__cards li a:after {
     background: transparent;
 }
 
-.achievements .card .circle, .circle1 {
+.achievements .card .circle,
+.circle1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -588,20 +577,124 @@ body.dark .skills-certif__cards li a:after {
     -webkit-background-clip: text;
 }
 
-.glimpses .card{
+.glimpses .card {
     width: 30%;
     height: 350px;
     border-radius: 1.5rem;
     margin: 0px 10px;
-    background-color: #d6d6d6;
+    background-color: #9ecaf470;
 }
 
-.glimpses .card-footer{
+.glimpses .card-footer {
     background-color: transparent;
 }
 
 .carousel-item img {
-    height:250px;
+    height: 250px;
     width: 100%;
     background-size: cover;
-  }
+}
+
+.glimpses p{
+    font-weight: 600;
+}
+
+/* ---------------contact & footer-------------------- */
+
+.contact-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.form {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    padding: 80px 40px 40px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.5);
+    transform: skewX(-27deg);
+    transform-origin: bottom left;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.form h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: #ff652f;
+}
+
+.form .input-group {
+    position: relative;
+}
+
+.form .input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.form .input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+.form .input-group input:focus+label,
+.form .input-group input:valid+label {
+    transform: translateY(-2px);
+    color: #ff652f;
+    font-size: 0.8rem;
+}
+
+.submit-btn {
+    display: block;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    background: #ff652f;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .btn-dark:hover {
+    box-shadow: 0 0 20px 2px #0b0909;
+}
