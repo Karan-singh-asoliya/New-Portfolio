@@ -304,8 +304,8 @@ h1 {
     color: transparent;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #0b0909 0%, #d6d6d6 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 
@@ -338,8 +338,8 @@ h1 {
     color: transparent;
     text-transform: uppercase;
     background: linear-gradient(to left, #0b0909 0%, #8c8c8c 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .col-md-6 .project-img {
@@ -418,8 +418,8 @@ h1 {
     color: transparent;
     text-transform: uppercase;
     background: linear-gradient(to top, #0b0a0a 0%, #ffffff 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .achievements .card {
@@ -573,8 +573,8 @@ h1 {
     color: transparent;
     text-transform: uppercase;
     background: linear-gradient(to right, #0b0909 -30%, #d6d6d6 100%);
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .glimpses .card {
@@ -600,7 +600,7 @@ h1 {
 }
 
 /* ---------------contact & footer-------------------- */
-
+/* 
 .contact-wrapper {
     height: 100vh;
     display: flex;
@@ -613,7 +613,7 @@ h1 {
     position: relative;
     width: 100%;
     max-width: 380px;
-    padding: 80px 40px 40px;
+    padding: 40px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     color: #fff;
@@ -627,7 +627,7 @@ h1 {
     left: 0;
     width: 40%;
     height: 100%;
-    background: rgba(28, 28, 28, 0.5);
+    background: rgba(43, 43, 43, 0.5);
     transform: skewX(-27deg);
     transform-origin: bottom left;
     border-radius: 10px;
@@ -635,10 +635,10 @@ h1 {
 }
 
 .form h2 {
-    text-align: center;
+    text-align: left;
     letter-spacing: 1px;
     margin-bottom: 2rem;
-    color: #ff652f;
+    color: rgb(170, 170, 170);
 }
 
 .form .input-group {
@@ -647,14 +647,14 @@ h1 {
 
 .form .input-group input {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px;
     font-size: 1rem;
     letter-spacing: 1px;
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgb(170, 170, 170);
     outline: none;
-    background-color: transparent;
+    background-color: #4c4c4c;
     color: inherit;
 }
 
@@ -662,7 +662,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10px 0;
+    padding: 10px;
     font-size: 1rem;
     pointer-events: none;
     transition: 0.3s ease-out;
@@ -670,8 +670,8 @@ h1 {
 
 .form .input-group input:focus+label,
 .form .input-group input:valid+label {
-    transform: translateY(-2px);
-    color: #ff652f;
+    transform: translate(-10px, -30px);
+    color: #ffffff;
     font-size: 0.8rem;
 }
 
@@ -680,19 +680,23 @@ h1 {
     margin-left: auto;
     border: none;
     outline: none;
-    background: #ff652f;
+    background: rgb(170, 170, 170);
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-}
+} */
+
 
 footer {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
 }
 
 .footer .btn-dark:hover {
