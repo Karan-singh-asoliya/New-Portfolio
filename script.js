@@ -4,13 +4,12 @@ function scrollValue() {
   var navbar = document.getElementById("navbar");
   var scroll = window.scrollY;
   if (scroll < 500) {
-    navbar.classList.remove("BgColour");
+    // navbar.classList.remove("BgColour");
   } else {
     navbar.classList.add("BgColour");
   }
 }
 window.addEventListener("scroll", scrollValue);
-
 
 // ----------------------- toggle contact button---------------
 
@@ -24,12 +23,12 @@ window.addEventListener("scroll", scrollValue);
 //   showFormBtn.addEventListener('click', function () {
 //     if (myForm.style.display === 'none') {
 //       myForm.style.display = 'block';
-      
+
 //       window.scrollTo({
 //         top: document.body.scrollHeight,
 //         behavior: 'smooth'
 //       });
-      
+
 //       footer.style.color = '#d6d6d6';
 //     } else {
 //       myForm.style.display = 'none';
